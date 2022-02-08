@@ -7,3 +7,7 @@ body{
 main{
   flex-grow: 1;
 }
+
+.tableRow{
+  border-bottom: 1px solid darkgrey;
+}

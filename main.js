@@ -8,7 +8,20 @@ const packages = [
   { heavy: true, priority: false, fragile: true, to: 'Jeremy', trackingNumber: 'suz2367' }]
 
 function draw() {
-  console.log(packages)
+  let table = ''
+  for (let i = 0; i < packages.length; i++) {
+    const package = packages[i]
+    table += `
+    <div class="row justify-space-between mt-2 tableRow">
+    <p class="col fw-bold">${package.to}</p>
+    <p class="col">${package.priority}</p>
+    <p class="col">${package.fragile}</p>
+    <p class="col">${package.heavy}</p>
+    <p class="col">${package.trackingNumber}</p>
+    </div>
+  `
+  }
+  document.getElementById('packList').innerHTML = table
 }
 
 draw()
