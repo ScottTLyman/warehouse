@@ -34,10 +34,11 @@
     </div>
     <div class="row mt-3">
       <div class="col d-flex justify-content-around">
-        <div class="btn btn-outline-primary">TRACKING #</div>
-        <div class="btn btn-outline-primary">PRIORITY</div>
-        <div class="btn btn-outline-primary">FRAGILE</div>
-        <div class="btn btn-outline-primary">HEAVY</div>
+        <div class="btn btn-outline-primary" onclick="filter('trackingNumber')">TRACKING #</div>
+        <div class="btn btn-outline-primary" onclick="filter('priority')">PRIORITY</div>
+        <div class="btn btn-outline-primary" onclick="filter('fragile')">FRAGILE</div>
+        <div class="btn btn-outline-primary" onclick="filter('heavy')">HEAVY</div>
+        <div class="btn btn-outline-dark" onclick="missPack">LOST!</div>
       </div>
     </div>
   </main>
