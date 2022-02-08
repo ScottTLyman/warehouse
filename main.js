@@ -1,11 +1,11 @@
 const packages = [
-  { heavy: true, priority: false, fragile: false, to: 'Harrington', trackingNumber: '1324kjs' },
-  { heavy: false, priority: true, fragile: true, to: 'Mark', trackingNumber: '1325sdk' },
-  { heavy: true, priority: false, fragile: true, to: 'Mick', trackingNumber: 'jffd147' },
-  { heavy: false, priority: false, fragile: false, to: 'Jake', trackingNumber: 'acdc145' },
-  { heavy: true, priority: true, fragile: true, to: 'Brittany' },
-  { heavy: false, priority: true, fragile: false, to: 'Zach', trackingNumber: '8081baz' },
-  { heavy: true, priority: false, fragile: true, to: 'Jeremy', trackingNumber: 'suz2367' }]
+  { missing: false, heavy: true, priority: false, fragile: false, to: 'Harrington', trackingNumber: '1324kjs' },
+  { missing: false, heavy: false, priority: true, fragile: true, to: 'Mark', trackingNumber: '1325sdk' },
+  { missing: false, heavy: true, priority: false, fragile: true, to: 'Mick', trackingNumber: 'jffd147' },
+  { missing: false, heavy: false, priority: false, fragile: false, to: 'Jake', trackingNumber: 'acdc145' },
+  { missing: false, heavy: true, priority: true, fragile: true, to: 'Brittany' },
+  { missing: false, heavy: false, priority: true, fragile: false, to: 'Zach', trackingNumber: '8081baz' },
+  { missing: false, heavy: true, priority: false, fragile: true, to: 'Jeremy', trackingNumber: 'suz2367' }]
 
 function draw() {
   let table = ''
@@ -24,4 +24,11 @@ function draw() {
   document.getElementById('packList').innerHTML = table
 }
 
-draw()
+function missPack() {
+  packages.forEach(package => package.missing = false)
+  const randIndex = Math.floor(Math.random() * packages.length)
+  packages[randIndex].missing = true
+  current = packages
+  draw()
+}
+
