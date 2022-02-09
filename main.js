@@ -11,11 +11,11 @@ let current = []
 
 function draw() {
   let table = ''
-  for (let i = 0; i < packages.length; i++) {
+  for (let i = 0; i < current.length; i++) {
     const package = current[i]
     table += `
     <div class="row justify-space-between mt-2 tableRow">
-    <p class="col fw-bold">${package.to}</p>
+    <p class="col fw-bold" onclick="guess('${package.to}')">${package.to}</p>
     <p class="col">${package.priority}</p>
     <p class="col">${package.fragile}</p>
     <p class="col">${package.heavy}</p>
@@ -42,6 +42,7 @@ function filter(filtProp) {
 }
 
 function guess(to) {
+  console.log('guess')
   let lostPackage = packages.find(package => package.missing)
   if (lostPackage.to == to) {
     alert('Package FOUND!')
